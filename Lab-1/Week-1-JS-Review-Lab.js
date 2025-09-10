@@ -478,7 +478,7 @@ const listings = [
  */
 //WRITE YOUR CODE BELOW
 
-yes;
+//doesnt turn green yeah it updated in the repo
 
 /**
  * Task-2: create an object named listing1 using the spread operator and add 2 new properties,
