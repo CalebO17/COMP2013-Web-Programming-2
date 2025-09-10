@@ -548,6 +548,6 @@ console.log(listingAscendingly);
 //WRITE YOUR CODE BELOW
 
 const newBuiltListings = listings.filter(
-  (post1990) => post1990.propertySummary.builtIn > 1990
+  (post1989) => post1989.propertySummary.builtIn > 1989
 );
 console.log(newBuiltListings);
