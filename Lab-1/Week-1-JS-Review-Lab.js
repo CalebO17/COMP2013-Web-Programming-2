@@ -478,7 +478,8 @@ const listings = [
  */
 //WRITE YOUR CODE BELOW
 
-//doesnt turn green yeah it updated in the repo
+const listing0 = listings[0];
+console.log(listing0);
 
 /**
  * Task-2: create an object named listing1 using the spread operator and add 2 new properties,
@@ -487,6 +488,11 @@ const listings = [
  */
 //WRITE YOUR CODE BELOW
 
+const listing1 = { ...listings[1] };
+listing1.isSold = false;
+listing1.currentOwner = "Jane Doe";
+console.log(listings[1]);
+console.log(listing1);
 /**
  * Task-3: print to console a text using template literals that contains the name of the owner,
  * and their current address for listing1.
@@ -494,6 +500,10 @@ const listings = [
  * "This house at (address) is owned by (currentOwner)"
  */
 //WRITE YOUR CODE BELOW
+
+console.log(
+  `This house at ${listing1.address} is owned by ${listing1.currentOwner}`
+);
 
 /**
  * NOTE: THIS TASK IS TRICKY!
@@ -510,13 +520,34 @@ const listings = [
  */
 //WRITE YOUR CODE BELOW
 
+const realtorFees = (listings) => {
+  let fixedPrice = listings.price.replace(",", "").replace("$", "");
+  return fixedPrice > 450000 ? fixedPrice * 0.02 : fixedPrice * 0.025;
+};
+
+let fee = realtorFees(listings[2]);
+console.log(fee);
+
 /**
  * Task-5: Sort the listing array ascendingly in a new variable called listingAscendingly
  */
 //WRITE YOUR CODE BELOW
 
+for (i = 0; i < listings.length; i++) {
+  let newPrice = listings[i].price.replace(",", "").replace("$", "");
+  listings[i].price = newPrice;
+}
+const listingAscendingly = listings.slice().sort((a, b) => a.price - b.price);
+console.log(listingAscendingly);
+
 /**
  * Task-6: filter all the listings by bulitIn propertity for all houses built on or after 1990.
  * Name the variable newBuiltListings
  */
+
 //WRITE YOUR CODE BELOW
+
+const newBuiltListings = listings.filter(
+  (post1990) => post1990.propertySummary.builtIn > 1990
+);
+console.log(newBuiltListings);
